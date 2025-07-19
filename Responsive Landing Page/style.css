@@ -1,0 +1,101 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* ✅ Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  transition: background 0.3s ease;
+  z-index: 999;
+}
+
+nav.scrolled {
+  background: #333;
+}
+
+nav .logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background: white;
+  color: #333;
+  border-radius: 4px;
+}
+
+/* ✅ Sections */
+section {
+  min-height: 100vh;
+  padding: 100px 30px 30px;
+}
+
+#home {
+  background: #4fc3f7;
+  color: white;
+}
+
+#about {
+  background: #81c784;
+}
+
+#services {
+  background: #ffb74d;
+}
+
+#contact {
+  background: #e57373;
+  color: white;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  nav .logo {
+    z-index: 1001;
+  }
+}
